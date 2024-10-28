@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            flex: 1;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #333333;
+            border-radius: 4px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Personal Website</h1>
+</header>
+
+<main>
+    <h2>About Me</h2>
+    <p>Hello! I'm Rudra Garg. This is my personal website hosted on Amazon S3.</p>
+
+    <h2>My Interests</h2>
+    <ul>
+        <li>Web Development</li>
+        <li>Cloud Computing</li>
+        <li>Astronomy</li>
+    </ul>
+
+    <h2>Contact Me</h2>
+    <p>Email: rudragarg09006@gmail.com</p>
+    <h2>Feedback</h2>
+    <p>We'd love to hear from you! <a href="{% url 'feedback' %}">Leave feedback</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2024 Rudra Garg. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

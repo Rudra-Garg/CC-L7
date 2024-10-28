@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #333333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8f8f8f;
+        }
+        .feedback-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feedback-list li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #333333;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #333333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Personal Website</h1>
+</header>
+
+<main>
+    <h2>Leave Feedback</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Feedback</h2>
+    <ul class="feedback-list">
+        {% for feedback in feedbacks %}
+        <li>
+            <p>{{ feedback.message }}</p>
+            <small>{{ feedback.created_at }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+
+<footer>
+    <p>&copy; 2024 Rudra Garg. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
